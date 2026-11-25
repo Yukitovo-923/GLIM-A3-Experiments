@@ -1,5 +1,2 @@
-* text=auto eol=lf
-*.py text
-*.sh text
-*.md text
-*.json text
+# Preserve the exported source bytes so SOURCE_MANIFEST.json remains verifiable.
+* -text
