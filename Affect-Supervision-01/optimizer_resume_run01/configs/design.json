@@ -1,0 +1,15 @@
+{
+  "question": "Does restoring the source V3 Adam state improve continuation stability, and does EPA add benefit once optimizer initialization is controlled?",
+  "conditions": ["reset", "restored"],
+  "arms": ["B0_Baseline", "B1_EPA"],
+  "seeds": [42, 43, 44],
+  "only_variable_within_each_arm_and_seed": "Adam optimizer state initialization",
+  "source_parameter_states": 214,
+  "new_b1_projector_parameter_states_at_start": 0,
+  "max_epochs": 10,
+  "early_stop_monitor": "val/loss_lm",
+  "early_stop_patience": 4,
+  "primary_split": "ZuCo1 Task1 validation; 40 sentence UIDs",
+  "test_split_used": false,
+  "condition_order_per_seed": ["B0_reset", "B0_restored", "B1_reset", "B1_restored"]
+}

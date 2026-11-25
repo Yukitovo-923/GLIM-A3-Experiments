@@ -1,0 +1,22 @@
+{
+  "model": {
+    "model": "roberta-large",
+    "revision": "722cf37b1afa9454edce342e7895e588b6ff1d59",
+    "path": "/root/autodl-tmp/Affect-Supervision-01/evaluation/hf_cache/models--roberta-large/snapshots/722cf37b1afa9454edce342e7895e588b6ff1d59",
+    "weights_sha256": "047c85f0b96269cd62e6f732644f067004eebd95af5b5d35965ae2528f13bf38",
+    "tokenizer_files": [
+      "config.json",
+      "merges.txt",
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "vocab.json"
+    ]
+  },
+  "num_layers": 17,
+  "idf": false,
+  "rescale_with_baseline": false,
+  "bert_score_package_hash": "/root/autodl-tmp/Affect-Supervision-01/evaluation/hf_cache/models--roberta-large/snapshots/722cf37b1afa9454edce342e7895e588b6ff1d59_L17_no-idf_version=0.3.12(hug_trans=4.40.2)",
+  "reference": "raw ZuCo1 Task1 sentence",
+  "lexical_metric_library": "torchmetrics 1.3.1",
+  "metric_unit_primary": "mean of per-UID means across subject trials"
+}

@@ -1,0 +1,14 @@
+{
+  "variant": "A3-full",
+  "disc_emotion_weight": 0.2,
+  "cont_emotion_weight": 0.0,
+  "vq_weight": 1.0,
+  "beta": 0.25,
+  "lm_loss_weight": 0.5,
+  "clip_loss_weight": 0.5,
+  "commitment_loss_weight": 0.0,
+  "attribute_dim": 64,
+  "temperature": 1.0,
+  "gate_init": 0.1,
+  "detach_probs": true
+}

@@ -1,0 +1,59 @@
+{
+  "experiment": "Affect-Supervision-01-LR-1e-5",
+  "arms": ["B0_Baseline", "B1_EPA"],
+  "checkpoint": {
+    "path": "/root/autodl-tmp/A3-v2-V3-50-A800/run-02/checkpoints/epoch=46-step=93436.ckpt",
+    "sha256": "fe30e8cfc308aa464caa6d460b82bd1720c857d029c9944758b9d0661884c337",
+    "expected_variant": "A3-full",
+    "expected_disc_emotion_weight": 0.2
+  },
+  "assets": {
+    "data": "/root/autodl-tmp/GLIM-main-A3-v2/data/tmp/zuco_eeg_label_8variants.df",
+    "data_sha256": "37bab58b26e808c1d3eb9d79ce1970744a9cc67263e35b7faf30c5204b8b7928",
+    "labels": "/root/autodl-tmp/GLIM-main-A3-v2/data/tmp/zuco_label_8variants.df",
+    "labels_sha256": "417a9bc980cfb40b448c09806cf3d38b8aa88e77f6393fa550f5a1ac1544ea41",
+    "e1_manifest": "/root/autodl-tmp/E1-V3-Long-Readability/run-02/split_manifest.csv",
+    "e1_manifest_sha256": "13ba43e80a6e90365bbabf2ced66538198597c9c749d6fdd77a3eb6ec374bb17",
+    "prototype": "/root/autodl-tmp/Text-space-Audit/run-01/encoder_mean_prototypes.npy",
+    "prototype_sha256": "ceaaccee85eee260c8c6e540bf441fced6421b2912aa9014d246e0cd55f5f31d",
+    "text_model": "/root/autodl-tmp/GLIM-main-A3-Revised/models/flan-t5-large",
+    "text_model_weight_sha256": "a9dd06ce490f139af36e9eb77dd3758b4fd07a08a73d5a1abe5ff2591e2d388e"
+  },
+  "data": {
+    "dataset": "ZuCo1",
+    "task": "task1",
+    "train_uids": 320,
+    "val_uids": 40,
+    "test_uids": 40,
+    "train_trials": 3316,
+    "val_trials": 406,
+    "test_trials": 417,
+    "train_text_variants_per_trial": 8
+  },
+  "loss": {
+    "clip_weight": 0.5,
+    "lm_weight": 0.5,
+    "vq_weight": 1.0,
+    "discrete_emotion_weight": 0.2,
+    "commitment_weight": 0.0,
+    "epa_weight_b1_only": 0.2,
+    "epa_temperature": 0.07,
+    "epa_sentence_weighting": "inverse_train_trial_count_per_UID"
+  },
+  "training": {
+    "seeds": [42, 43, 44],
+    "optimizer": "Adam",
+    "learning_rate": 0.00001,
+    "weight_decay": 0.0,
+    "batch_size_train": 72,
+    "batch_size_val": 24,
+    "batch_size_test": 24,
+    "max_epochs": 10,
+    "precision": "bf16-mixed",
+    "num_workers": 4,
+    "full_val_interval": 10,
+    "early_stopping": {"monitor": "val/loss_lm", "mode": "min", "patience": 4, "min_delta": 0.0},
+    "checkpoint": {"monitor": "val/loss_lm", "mode": "min", "save_top_k": 1, "save_last": true}
+  },
+  "generation": {"num_beams": 2, "min_length": 0, "max_length": 64}
+}
